@@ -68,7 +68,7 @@ async def inner_loop(  # pylint: disable=too-many-locals
         be found in beneficial deviations smaller than this.
     num_equilibria : int > 0, optional
         The number of equilibria to attempt to find. Only one is guaranteed,
-        but this might be beneifical if the game has a known degenerate
+        but this might be beneficial if the game has a known degenerate
         equilibria, but one which is still helpful as a deviating strategy.
     num_backups : int > 0, optional
         In the event that no equilibrium can be found in beneficial deviations
@@ -82,7 +82,7 @@ async def inner_loop(  # pylint: disable=too-many-locals
         fail to find certain equilibria due to the different path through
         restricted games.
     style : string, optional
-        A string describing the thoroughness of equilibrium finding. Seed
+        A string describing the thoroughness of equilibrium finding. See
         `nash.mixed_equilibria` for options and a description.
     executor : Executor, optional
         The executor to be used for Nash finding. The default setting will
@@ -251,7 +251,7 @@ async def inner_loop(  # pylint: disable=too-many-locals
                         continue
                     rest = mask.copy()
                     # TODO We could randomize instead of taking the first
-                    # strategy, but this would remove reproducability unless it
+                    # strategy, but this would remove reproducibility unless it
                     # was somehow predicated on all of the explored
                     # restrictions or something...
                     strat = np.split(rest, agame.role_starts[1:])[role].argmin()
